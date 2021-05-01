@@ -1,8 +1,8 @@
 import * as React from "react";
-import { VStack, Text } from "@chakra-ui/react";
+import Layout from "./components/Layout";
 
 export const App = () => (
-  <VStack bgColor="brand.300">
-    <Text>HI</Text>
-  </VStack>
+  <Layout title="Dollar Exchange Rate" showColorModeSwitcher>
+    HI
+  </Layout>
 );
