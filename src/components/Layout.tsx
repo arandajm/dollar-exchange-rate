@@ -1,32 +1,15 @@
 import React from "react";
-import { Container, Heading, Icon, Stack } from "@chakra-ui/react";
-import { ColorModeSwitcher } from "../ColorModeSwitcher";
-import { FaDollarSign } from "react-icons/fa";
+import { Container, Stack } from "@chakra-ui/react";
+import Header from "./Header";
+import Footer from "./Footer";
 
-interface Props {
-  title: string;
-  showColorModeSwitcher: boolean;
-}
-
-const Layout: React.FC<Props> = ({ title, showColorModeSwitcher, children }) => (
-  <Stack>
-    <Stack
-      bgColor="brand.300"
-      height="16"
-      direction="row"
-      alignItems="center"
-      justifyContent="space-between"
-      px="8"
-    >
-      <Stack direction="row" alignItems="center">
-        <Icon as={FaDollarSign} w={8} h={8}/>
-        <Heading size="lg" ml="0" isTruncated>{title}</Heading>
-      </Stack>
-      {showColorModeSwitcher && <ColorModeSwitcher />}
-    </Stack>
-    <Container maxW="container.md" alignSelf="center">
+const Layout: React.FC = ({ children }) => (
+  <Stack direction="column" minHeight="100vh">
+    <Header title="Dollar Exchange Rate" showColorModeSwitcher/>
+    <Container maxW="container.md" alignSelf="center" flex="1">
       {children}
     </Container>
+    <Footer />
   </Stack>
 );
 
